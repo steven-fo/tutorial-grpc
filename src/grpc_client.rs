@@ -1,8 +1,8 @@
-use services::{payment_service_client::PaymentServiceClient, PaymentRequest};
-
 pub mod services {
     tonic::include_proto!("services");
 }
+
+use services::{payment_service_client::PaymentServiceClient, PaymentRequest};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {

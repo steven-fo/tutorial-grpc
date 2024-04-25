@@ -1,9 +1,10 @@
 use tonic::{transport::Server, Request, Response, Status};
-use services::{payment_service_server::{PaymentService, PaymentServiceServer}, PaymentRequest, PaymentResponse};
 
 pub mod services {
     tonic::include_proto!("services");
 }
+
+use services::{payment_service_server::{PaymentService, PaymentServiceServer}, PaymentRequest, PaymentResponse};
 
 #[derive(Default)]
 pub struct MyPaymentService {}
