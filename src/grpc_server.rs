@@ -1,6 +1,3 @@
-use std::fmt::format;
-
-use prost::Message;
 use tonic::{transport::Server, Request, Response, Status};
 use tokio::sync::mpsc;
 use tokio_stream::wrappers::ReceiverStream;
@@ -10,7 +7,7 @@ pub mod services {
     tonic::include_proto!("services");
 }
 
-use services::{chat_service_client, chat_service_server::{ChatService, ChatServiceServer}, payment_service_server::{PaymentService, PaymentServiceServer}, transaction_service_server::{TransactionService, TransactionServiceServer}, ChatMessage, PaymentRequest, PaymentResponse, TransactionRequest, TransactionResponse};
+use services::{chat_service_server::{ChatService, ChatServiceServer}, payment_service_server::{PaymentService, PaymentServiceServer}, transaction_service_server::{TransactionService, TransactionServiceServer}, ChatMessage, PaymentRequest, PaymentResponse, TransactionRequest, TransactionResponse};
 
 #[derive(Default)]
 pub struct MyPaymentService {}
